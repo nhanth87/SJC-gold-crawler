@@ -46,7 +46,7 @@ if __name__ == '__main__':
     while from_date <= to_date:
         g_date = from_date.strftime("%Y-%m-%d")
         try:
-            soup = crawler('https://giavangonline.com/goldhistory.php?date=2021-10-01')
+            soup = crawler('https://giavangonline.com/goldhistory.php?date={0}'.format(g_date))
 
             links = soup.find(id='sjcexchange')
             links = links.find("table", attrs={"class":"home"})
